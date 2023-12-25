@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import { config } from "dotenv";
 import appRouter from "./routes/index.js";
 import cookieParser from "cookie-parser";
@@ -21,9 +21,10 @@ app.use(cors(
 //remove it in production
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
     res.json("test")
 })
+
 app.use("/api/v1", appRouter);
 
 app.use(ErrorMiddleware);
