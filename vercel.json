@@ -6,5 +6,12 @@
    ],
    "routes": [
       { "src": "/(.*)", "dest": "src/index.ts" }
-   ]
+   ],
+   "env":{
+    "MONGO_URL" : "mongodb+srv://sarthak:Nmvi8skXosIiV1oz@lms.ax89gf0.mongodb.net/Lms",
+"JWT_SECRET" : "abcdkclabdlueodobuca",
+"COOKIE_SECRET" :"cdcbllicgaiqw9bcdcbila",
+"OPENAI_API_KEY" : "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",
+"OPENAI_ORGANIZATION_ID" : "org-IrbJU2calNolILc9SLPeHxPq"
+   }
 }
