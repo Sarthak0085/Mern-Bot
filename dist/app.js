@@ -8,10 +8,19 @@ config();
 const app = express();
 //middlewares
 app.use(express.json());
-app.use(cors({
-    origin: ["mern-bot-client.vercel.app",],
+const allowedOrigins = ['https://mern-bot-client.vercel.app'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
-}));
+};
+app.use(cors(corsOptions));
 //remove it in production
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.get("/", (req, res) => {
