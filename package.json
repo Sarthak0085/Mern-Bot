@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "This contains the backend apis of the mern-bot using open ai",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "type": "module",
   "proxy": "https://mern-bot-client.vercel.app",
   "scripts": {
