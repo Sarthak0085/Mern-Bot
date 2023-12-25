@@ -12,6 +12,7 @@
     { "src": "/(.*)", "dest": "/dist/$1" }
   ],
    "env":{
+    "PORT":"7000",
     "MONGO_URL" : "mongodb+srv://sarthak:Nmvi8skXosIiV1oz@lms.ax89gf0.mongodb.net/Lms",
 "JWT_SECRET" : "abcdkclabdlueodobuca",
 "COOKIE_SECRET" :"cdcbllicgaiqw9bcdcbila",
