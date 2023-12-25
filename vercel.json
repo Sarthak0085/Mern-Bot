@@ -2,10 +2,10 @@
    "version": 2,
    "name": "Mern-Bot",
    "builds": [
-      { "src": "src/index.ts", "use": "@vercel/node" }
+      { "src": "src/app.ts", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "src/index.ts" }
+      { "src": "/(.*)", "dest": "src/app.ts" }
    ],
    "env":{
     "MONGO_URL" : "mongodb+srv://sarthak:Nmvi8skXosIiV1oz@lms.ax89gf0.mongodb.net/Lms",
