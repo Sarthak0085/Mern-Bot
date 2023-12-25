@@ -24,6 +24,9 @@ app.use(cors(
 app.use(morgan("dev"));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
+app.get("/", (req, res) => {
+    res.json("test")
+})
 app.use("/api/v1", appRouter);
 
 app.use(ErrorMiddleware);
