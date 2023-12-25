@@ -13,5 +13,10 @@
 "COOKIE_SECRET" :"cdcbllicgaiqw9bcdcbila",
 "OPENAI_API_KEY" : "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",
 "OPENAI_ORGANIZATION_ID" : "org-IrbJU2calNolILc9SLPeHxPq"
-   }
+   },
+   "functions": {
+    "api/v1/*.js": {
+      "maxDuration": 30
+    }
+  }
 }
