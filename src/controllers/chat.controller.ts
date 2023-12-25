@@ -3,7 +3,7 @@ import userModel from "../models/user.model.js";
 import ChatCompletionMessageParam from 'openai';
 import OpenAI from 'openai';
 import { configureOpenAI } from "../config/openai-config.js";
-import { CreateChatCompletionRequestMessage } from "openai/resources/index.mjs";
+// import { CreateChatCompletionRequestMessage } from "openai/resources/index.mjs";
 import { CatchAsyncError } from "../middleware/catchAsyncError.js";
 import ErrorHandler from "../utils/ErrorHandler.js";
 
@@ -29,7 +29,7 @@ export const generateChat = CatchAsyncError(async (req: Request, res: Response, 
             return next(new ErrorHandler("Permissions didn't match", 401));
         }
 
-        const chatMessages = user.chats?.map(({ role, content }) => ({ role, content })) as CreateChatCompletionRequestMessage[];
+        const chatMessages = user.chats?.map(({ role, content }) => ({ role, content }));
 
         const newChatMessage = { content: message, role: "user" }
         console.log(newChatMessage);

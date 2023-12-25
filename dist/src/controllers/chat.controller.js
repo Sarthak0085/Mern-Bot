@@ -1,6 +1,7 @@
 import userModel from "../models/user.model.js";
 import OpenAI from 'openai';
 import { configureOpenAI } from "../config/openai-config.js";
+// import { CreateChatCompletionRequestMessage } from "openai/resources/index.mjs";
 import { CatchAsyncError } from "../middleware/catchAsyncError.js";
 import ErrorHandler from "../utils/ErrorHandler.js";
 export const generateChat = CatchAsyncError(async (req, res, next) => {
