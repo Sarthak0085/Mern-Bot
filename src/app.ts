@@ -14,9 +14,8 @@ app.use(express.json());
 
 app.use(cors(
     {
-        origin: ["mern-bot-client.vercel.app"],
+        origin: ["mern-bot-client.vercel.app",],
         credentials: true,
-        optionsSuccessStatus: 200,
     }
 ))
 
