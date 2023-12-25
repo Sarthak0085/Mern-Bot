@@ -1,10 +1,10 @@
 {
    "version": 2,
-   "name": "music-album",
+   "name": "Mern-Bot",
    "builds": [
-      { "src": "index.js", "use": "@vercel/node" }
+      { "src": "src/index.ts", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "/index.js" }
+      { "src": "/(.*)", "dest": "src/index.ts" }
    ]
 }
