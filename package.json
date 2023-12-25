@@ -4,10 +4,13 @@
   "description": "This contains the backend apis of the mern-bot using open ai",
   "main": "index.ts",
   "type": "module",
-  "proxy": "http://localhost:5173",
+  "proxy": "https://mern-bot-client.vercel.app",
   "scripts": {
+    "dev": "npm-run-all --parallel watch:typescript nodemon",
     "start": "node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "watch:typescript": "tsc --watch",
+    "nodemon": "nodemon -q dist/index.js"
   },
   "author": "Sarthak",
   "license": "ISC",

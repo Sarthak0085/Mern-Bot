@@ -2,21 +2,16 @@
    "version": 2,
    "name": "Mern-Bot",
    "builds": [
-      { "src": "src/app.ts", "use": "@vercel/node" }
-   ],
-   "routes": [
-      { "src": "/(.*)", "dest": "/src/app.ts" }
-   ],
+    { "src": "src/index.ts", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/api/v1/(.*)", "dest": "src/index.ts" }
+  ],
    "env":{
     "MONGO_URL" : "mongodb+srv://sarthak:Nmvi8skXosIiV1oz@lms.ax89gf0.mongodb.net/Lms",
 "JWT_SECRET" : "abcdkclabdlueodobuca",
 "COOKIE_SECRET" :"cdcbllicgaiqw9bcdcbila",
 "OPENAI_API_KEY" : "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",
 "OPENAI_ORGANIZATION_ID" : "org-IrbJU2calNolILc9SLPeHxPq"
-   },
-   "functions": {
-    "api/v1/*.js": {
-      "maxDuration": 30
-    }
-  }
+   }
 }
