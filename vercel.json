@@ -2,10 +2,14 @@
    "version": 2,
    "name": "Mern-Bot",
    "builds": [
-    { "src": "src/app.ts", "use": "@now/node" }
+    {
+      "src": "src/**/*.ts",
+      "use": "@now/node",
+      "config": { "tsconfig": "tsconfig.json" }
+    }
   ],
   "routes": [
-    { "src": "/api/v1/(.*)", "dest": "src/app.ts" }
+    { "src": "/(.*)", "dest": "/dist/$1" }
   ],
    "env":{
     "MONGO_URL" : "mongodb+srv://sarthak:Nmvi8skXosIiV1oz@lms.ax89gf0.mongodb.net/Lms",

@@ -108,6 +108,7 @@
     "moduleResolution": "NodeNext",
     "sourceMap": true,
     "outDir": "dist",
+    "rootDir": "src",
     "allowSyntheticDefaultImports": true                         /* Skip type checking all .d.ts files. */
   },
   "include": ["src/**/*.ts","src/index.ts"],
