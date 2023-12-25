@@ -5,7 +5,7 @@
       { "src": "src/app.ts", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "src/app.ts" }
+      { "src": "/(.*)", "dest": "/src/app.ts" }
    ],
    "env":{
     "MONGO_URL" : "mongodb+srv://sarthak:Nmvi8skXosIiV1oz@lms.ax89gf0.mongodb.net/Lms",
