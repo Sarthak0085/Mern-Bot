@@ -41,7 +41,11 @@ export const register = CatchAsyncError(async (req, res, next) => {
         await user.save();
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
             signed: true,
+            secure: true,
+            sameSite: "none",
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
@@ -49,7 +53,11 @@ export const register = CatchAsyncError(async (req, res, next) => {
         res.cookie(COOKIE_NAME, token, {
             httpOnly: true,
             signed: true,
-            expires
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
+            expires,
+            secure: true,
+            sameSite: "none",
         });
         return res.status(200).json({
             success: true,
@@ -80,7 +88,11 @@ export const login = CatchAsyncError(async (req, res, next) => {
         }
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
             signed: true,
+            secure: true,
+            sameSite: "none",
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
@@ -88,7 +100,11 @@ export const login = CatchAsyncError(async (req, res, next) => {
         res.cookie(COOKIE_NAME, token, {
             httpOnly: true,
             signed: true,
-            expires
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
+            expires,
+            secure: true,
+            sameSite: "none",
         });
         return res.status(200).json({
             success: true,
@@ -128,7 +144,11 @@ export const logout = CatchAsyncError(async (req, res, next) => {
         }
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
-            signed: true
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
+            signed: true,
+            secure: true,
+            sameSite: "none",
         });
         return res.status(200).json({
             success: true,
