@@ -53,7 +53,11 @@ export const register = CatchAsyncError(async (req: Request, res: Response, next
 
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
             signed: true,
+            secure: true,
+            sameSite: "none",
         });
 
 
@@ -65,7 +69,11 @@ export const register = CatchAsyncError(async (req: Request, res: Response, next
         res.cookie(COOKIE_NAME, token, {
             httpOnly: true,
             signed: true,
-            expires
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
+            expires,
+            secure: true,
+            sameSite: "none",
         })
 
         return res.status(200).json({
@@ -106,7 +114,11 @@ export const login = CatchAsyncError(async (req: Request, res: Response, next: N
 
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
             signed: true,
+            secure: true,
+            sameSite: "none",
         });
 
 
@@ -118,7 +130,11 @@ export const login = CatchAsyncError(async (req: Request, res: Response, next: N
         res.cookie(COOKIE_NAME, token, {
             httpOnly: true,
             signed: true,
-            expires
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
+            expires,
+            secure: true,
+            sameSite: "none",
         })
 
         return res.status(200).json({
@@ -165,7 +181,11 @@ export const logout = CatchAsyncError(async (req: Request, res: Response, next: 
 
         res.clearCookie(COOKIE_NAME, {
             httpOnly: true,
-            signed: true
+            domain: "mern-bot-server.onrender.com",
+            path: "/",
+            signed: true,
+            secure: true,
+            sameSite: "none",
         });
 
         return res.status(200).json({

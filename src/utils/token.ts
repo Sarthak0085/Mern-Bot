@@ -15,7 +15,7 @@ export const createToken = (id: string, email: string, expiresIn: string) => {
 }
 
 export const verifyToken = async (req: Request, res: Response, next: NextFunction) => {
-    const token = req.signedCookies[COOKIE_NAME]
+    const token = req.signedCookies[`${COOKIE_NAME}`]
 
     if (!token || token.trim === " ") {
         return res.status(401).json({
